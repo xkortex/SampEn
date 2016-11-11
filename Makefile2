@@ -1,22 +1,24 @@
 # file: Makefile		G. Moody	1 November 2004
 
 CC=gcc
-CFLAGS=-c
+CFLAGS=-pg -Wno-write-strings
+# Library flag is important!
 LDFLAGS=-pthread -pg -lm
-EXE=sampen
+TARGET=sampen
 SOURCES=sampen.c
-OBJ=$(SOURCES:.c=.o)
 
-all: $(SOURCES) $(EXE)
+OBJS=$(SOURCES:.c=.o)
 
-$(EXE): $(OBJ)
-	$(CC) $(OBJ) -o $(EXE) $(LDFLAGS)
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CC) -o $(TARGET) $(CFLAGS) $(OBJS) $(LDFLAGS)
 
 .c.o:
-	$(CC) $(CFLAGS) $< -o $@
+	$(CC) $(CFLAGS) $< -o $(TARGET) $(LDFLAGS)
 
 clean:
-	rm -f *.o core $(TARGET) sampen.out sampen.1* test.1* *~
+	rm -f *.o core $(TARGET)
 
 # 'make' or 'make sampen': compile the program in the current directory
 #sampen:		sampen.c
@@ -48,12 +50,10 @@ check:		sampen testfiles
 	./sampen -v -n test.10000 >sampen.10000vn
 	@if diff sampen.10000vn expected.10000vn; \
 	 then echo Test 5 passed ; else echo Test 5 failed ; fi
-
-
-check6:		sampen testfiles
 	@echo "Test 6 may require several minutes -- please be patient!"
 	./sampen -m 10 test.100000 >sampen.100000
 	@if diff sampen.100000 expected.100000; \
 	 then echo Test 6 passed ; else echo Test 6 failed ; fi
 
-
+clean:
+	rm -f $(TARGET) sampen.out sampen.1* test.1* *~

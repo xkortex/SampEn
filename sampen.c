@@ -48,10 +48,12 @@ Additional information is available at:
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+// Locals
+//#include "aux.h"
 
 double *readdata(char *filenm, int *filelen);
 
-void sampen(double *y, int mm, double r, int n);
+void sampen(double *y, int maxepochs, double r_tol, int npts);
 
 void sampen2(double *y, int mm, double r, int n);
 
@@ -61,8 +63,9 @@ void help(void);
 
 int main(int argc, char *argv[]) {
     double *data = NULL;
-    double r = .2;
-    int n, mm = 2;
+    double r_tolerance = .2;
+    int npts;
+    int maxepochs = 2;
     char *filenm = NULL;
     int nflag = 0;
     int vflag = 0;
@@ -85,7 +88,7 @@ int main(int argc, char *argv[]) {
                     }
                     if (i + 1 < argc) {
                         i++;
-                        r = atof(argv[i]);
+                        r_tolerance = atof(argv[i]);
                         break;
                     }
                     fprintf(stderr,
@@ -102,7 +105,7 @@ int main(int argc, char *argv[]) {
                     }
                     if (i + 1 < argc) {
                         i++;
-                        mm = atoi(argv[i]);
+                        maxepochs = atoi(argv[i]);
                         break;
                     }
                     fprintf(stderr,
@@ -146,20 +149,19 @@ int main(int argc, char *argv[]) {
 
     if (!filenm)
         filenm = "-";    /* use the standard input if no input file specified */
-    data = readdata(filenm, &n);
-    if (mm > n / 2) {
-        fprintf(stderr,
-                "sampen:  m too large for time series of length %d\n", n);
+    data = readdata(filenm, &npts);
+    if (maxepochs > npts / 2) {
+        fprintf(stderr, "sampen:  m too large for time series of length %d\n", npts);
         exit(1);
     }
 
     if (nflag) {
-        normalize(data, n);
+        normalize(data, npts);
     }
     if (vflag) {
-        sampen2(data, mm, r, n);
+        sampen2(data, maxepochs, r_tolerance, npts);
     } else {
-        sampen(data, mm, r, n);
+        sampen(data, maxepochs, r_tolerance, npts);
     }
     free(data);
     return 0;
@@ -178,15 +180,16 @@ double *readdata(char *filenm, int *filelen) {
         exit(1);
     }
 
+    // todo: option for reading in binary data
     while (fscanf(ifile, "%lf", &y) == 1) {
-        if (++npts >= maxdat) {
+        if (++npts >= maxdat) { // todo: ugly, refactor this
             double *s;
 
             maxdat += 5000;    /* allow the input buffer to grow (the
 				   increment is arbitrary) */
             if ((s = realloc(data, maxdat * sizeof(double))) == NULL) {
                 fprintf(stderr,
-                        "sampen: insufficient memory, truncating input at row %d\n",
+                        "sampen: insufficient memory, truncating input at row %ld\n",
                         npts);
                 break;
             }
@@ -392,7 +395,7 @@ void sampen2(double *y, int mm, double r, int n) {
 
 /* sampen() calculates an estimate of sample entropy but does NOT calculate
    the variance of the estimate */
-void sampen(double *y, int M, double r, int n) {
+void sampen(double *y, int maxepochs,  double r_tol, int npts) {
     double *p = NULL;
     double *e = NULL;
     long *run = NULL, *lastrun = NULL, N;
@@ -401,25 +404,25 @@ void sampen(double *y, int M, double r, int n) {
     int i;
     double y1;
 
-    M++;
-    if ((run = (long *) calloc(n, sizeof(long))) == NULL) exit(1);
-    if ((lastrun = (long *) calloc(n, sizeof(long))) == NULL) exit(1);
-    if ((A = (double *) calloc(M, sizeof(double))) == NULL) exit(1);
-    if ((B = (double *) calloc(M, sizeof(double))) == NULL) exit(1);
-    if ((p = (double *) calloc(M, sizeof(double))) == NULL) exit(1);
+    maxepochs++;
+    if ((run = (long *) calloc(npts, sizeof(long))) == NULL) exit(1);
+    if ((lastrun = (long *) calloc(npts, sizeof(long))) == NULL) exit(1);
+    if ((A = (double *) calloc(maxepochs, sizeof(double))) == NULL) exit(1);
+    if ((B = (double *) calloc(maxepochs, sizeof(double))) == NULL) exit(1);
+    if ((p = (double *) calloc(maxepochs, sizeof(double))) == NULL) exit(1);
 
     /* start running */
-    for (i = 0; i < n - 1; i++) {
-        nj = n - i - 1;
+    for (i = 0; i < npts - 1; i++) {
+        nj = npts - i - 1;
         y1 = y[i];
         for (jj = 0; jj < nj; jj++) {
             j = jj + i + 1;
-            if (((y[j] - y1) < r) && ((y1 - y[j]) < r)) {
+            if (((y[j] - y1) < r_tol) && ((y1 - y[j]) < r_tol)) {
                 run[jj] = lastrun[jj] + 1;
-                M1 = M < run[jj] ? M : run[jj];
+                M1 = maxepochs < run[jj] ? maxepochs : run[jj];
                 for (m = 0; m < M1; m++) {
                     A[m]++;
-                    if (j < n - 1) {
+                    if (j < npts - 1) {
                         B[m]++;
                     }
                 }
@@ -431,14 +434,14 @@ void sampen(double *y, int M, double r, int n) {
         }
     }                /* for i */
 
-    N = (long) (n * (n - 1) / 2);
+    N = (long) (npts * (npts - 1) / 2);
     p[0] = A[0] / N;
-    printf("SampEn(0,%g,%d) = %lf\n", r, n, -log(p[0]));
+    printf("SampEn(0,%g,%d) = %lf\n", r_tol, npts, -log(p[0]));
 
-    for (m = 1; m < M; m++) {
+    for (m = 1; m < maxepochs; m++) {
         p[m] = A[m] / B[m - 1];
-        if (p[m] == 0)  printf("No matches! SampEn((%d,%g,%d) = Inf!\n", m, r, n);
-        else  printf("SampEn(%d,%g,%d) = %lf\n", m, r, n, -log(p[m]));
+        if (p[m] == 0)  printf("No matches! SampEn((%d,%g,%d) = Inf!\n", m, r_tol, npts);
+        else  printf("SampEn(%d,%g,%d) = %lf\n", m, r_tol, npts, -log(p[m]));
     }
 
     free(A);

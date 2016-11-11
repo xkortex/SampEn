@@ -12,12 +12,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9a99a5-4a10-4749-9135-b1601a372458" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sampen-1.1.c" afterPath="$PROJECT_DIR$/depreciated/sampen-1.1.c" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sampen-1.2.c" afterPath="$PROJECT_DIR$/depreciated/sampen-1.0.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Makefile2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aux.c" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/aux.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sampen" afterPath="$PROJECT_DIR$/sampen" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sampen.iml" afterPath="$PROJECT_DIR$/.idea/sampen.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Makefile" afterPath="$PROJECT_DIR$/Makefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sampen.c" afterPath="$PROJECT_DIR$/sampen.c" />
     </list>
     <ignored path="sampen.iws" />
@@ -50,11 +53,35 @@
       <file leaf-file-name="sampen.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sampen.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-681">
-              <caret line="64" column="13" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="13" />
+            <state relative-caret-position="276">
+              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding>
-                <element signature="e#7111#12335#0" expanded="false" />
+                <element signature="e#1945#1963#0" expanded="true" />
+                <element signature="e#6802#7317#0" expanded="false" />
+                <element signature="e#7319#12543#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aux.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aux.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding>
+                <element signature="e#36#55#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aux.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aux.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,7 +91,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="FIRST">
               <first_editor relative-caret-position="119">
-                <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+                <caret line="7" column="113" selection-start-line="7" selection-start-column="113" selection-end-line="7" selection-end-column="113" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -78,8 +105,18 @@
       <file leaf-file-name="Makefile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Makefile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+            <state relative-caret-position="389">
+              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Makefile2" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Makefile2">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,9 +132,12 @@
       <list>
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/license.md" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/LICENSE_original.md" />
+        <option value="$PROJECT_DIR$/aux.c" />
+        <option value="$PROJECT_DIR$/aux.h" />
         <option value="$PROJECT_DIR$/sampen.c" />
+        <option value="$PROJECT_DIR$/Makefile" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -181,6 +221,9 @@
     <property name="js-jscs-nodeInterpreter" value="$USER_HOME$/.nvm/versions/node/v6.3.1/bin/node" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/depreciated" />
     </key>
@@ -382,12 +425,12 @@
       <option name="presentableId" value="Default" />
       <updated>1478632203783</updated>
       <workItem from="1478632206537" duration="2820000" />
-      <workItem from="1478900229139" duration="808000" />
+      <workItem from="1478900229139" duration="4113000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3628000" />
+    <option name="totallyTimeSpent" value="6933000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="768" extended-state="6" />
@@ -444,7 +487,9 @@
         <state relative-caret-position="714">
           <caret line="42" column="49" selection-start-line="0" selection-start-column="3" selection-end-line="42" selection-end-column="49" />
           <folding>
-            <element signature="e#7111#12335#0" expanded="false" />
+            <element signature="e#1945#1963#0" expanded="true" />
+            <element signature="e#6802#7317#0" expanded="false" />
+            <element signature="e#7319#12543#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -494,14 +539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LICENSE_original.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
@@ -516,12 +553,48 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aux.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aux.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#36#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Makefile2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sampen.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-681">
-          <caret line="64" column="13" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="13" />
+        <state relative-caret-position="276">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
-            <element signature="e#7111#12335#0" expanded="false" />
+            <element signature="e#1945#1963#0" expanded="true" />
+            <element signature="e#6802#7317#0" expanded="false" />
+            <element signature="e#7319#12543#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -530,7 +603,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="119">
-            <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <caret line="7" column="113" selection-start-line="7" selection-start-column="113" selection-end-line="7" selection-end-column="113" />
             <folding />
           </first_editor>
           <second_editor />
