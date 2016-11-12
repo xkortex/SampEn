@@ -12,7 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9a99a5-4a10-4749-9135-b1601a372458" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sampen-1.3.c" afterPath="$PROJECT_DIR$/sampen-1.3.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/timetesting.ipynb" afterPath="$PROJECT_DIR$/timetesting.ipynb" />
     </list>
@@ -62,11 +61,11 @@
       <file leaf-file-name="sampen-1.3.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sampen-1.3.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="481" column="24" selection-start-line="481" selection-start-column="24" selection-end-line="481" selection-end-column="24" />
+            <state relative-caret-position="183">
+              <caret line="474" column="74" selection-start-line="474" selection-start-column="74" selection-end-line="474" selection-end-column="74" />
               <folding>
                 <element signature="e#1945#1963#0" expanded="true" />
-                <marker date="1478969472797" expanded="false" signature="7453:12624" ph="{...}" />
+                <marker date="1478978271305" expanded="false" signature="7453:12624" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -186,9 +185,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="width" value="1922" />
-    <option name="height" value="1080" />
+    <option name="x" value="1919" />
+    <option name="y" value="312" />
+    <option name="width" value="1368" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -463,18 +463,18 @@
       <option name="presentableId" value="Default" />
       <updated>1478632203783</updated>
       <workItem from="1478632206537" duration="2820000" />
-      <workItem from="1478900229139" duration="21563000" />
+      <workItem from="1478900229139" duration="22501000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24383000" />
+    <option name="totallyTimeSpent" value="25321000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1922" height="1080" extended-state="6" />
+    <frame x="1919" y="312" width="1368" height="768" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09119663" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12881608" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -727,11 +727,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sampen-1.3.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="481" column="24" selection-start-line="481" selection-start-column="24" selection-end-line="481" selection-end-column="24" />
+        <state relative-caret-position="183">
+          <caret line="474" column="74" selection-start-line="474" selection-start-column="74" selection-end-line="474" selection-end-column="74" />
           <folding>
             <element signature="e#1945#1963#0" expanded="true" />
-            <marker date="1478969472797" expanded="false" signature="7453:12624" ph="{...}" />
+            <marker date="1478978271305" expanded="false" signature="7453:12624" ph="{...}" />
           </folding>
         </state>
       </provider>
