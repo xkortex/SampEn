@@ -51,41 +51,42 @@ Additional information is available at:
 // Locals
 #include "aux.h"
 #include "argparse.h"
+#include "data_io.h"
 
-double *readdata(char *filenm, int *filelen);
-double *readbinary(FILE *file, int *filelen);
 
 void sampen(double *y, int maxepochs, double r_tol, int npts);
-
-void sampen2(double *y, int mm, double r, int n);
-
 void normalize(double *data, int n);
 
-void help(void);
-
-int main(int argc, char *argv[]) {
+int main(int argc, char **argv) {
     double *data = NULL;
     double r_tolerance = .2;
-    int npts;
+    long npts;
     int maxepochs = 2;
     char *filenm = NULL;
     int nflag = 0;
     int vflag = 0;
     int i;
+    FILE *infile;
 
     /* Read input and optional arguments. */
-
     // Going to make a mess of things before making it cleaner
 
+    infile = flexopen(argv[1], stdin, argc > 0, "r");
+    if (argc == 1) {
+        data = readbinary(infile, &npts);
+    } else {
+        fprintf(stderr, "Reading from file\n");
+        data = readdata(infile, &npts);
+    }
+    fprintf(stderr, "Success reading file\n");
 
     /* use the standard input if no input file specified */
+//
 
-//    data = readdata(filenm, &npts);
-    data = readbinary(stdin, &npts);
 
 
     if (maxepochs > npts / 2) {
-        fprintf(stderr, "sampen:  m too large for time series of length %d\n", npts);
+        fprintf(stderr, "sampen:  m too large for time series of length %ld\n", npts);
         exit(1);
     }
 
@@ -102,52 +103,7 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-double *readbinary(FILE *file, int *filelen) {
 
-}
-
-double *readdata(char *filenm, int *filelen) {
-    FILE *ifile;
-    long maxdat = 0L, npts = 0L;
-    double *data = NULL, y, yp = 0.0;
-
-    if (strcmp(filenm, "-") == 0) {
-        filenm = "standard input";
-        ifile = stdin;
-    } else if ((ifile = fopen(filenm, "rt")) == NULL) {
-        fprintf(stderr, "sampen:  Could not open %s \n", filenm);
-        exit(1);
-    }
-
-    // todo: option for reading in binary data
-    while (fscanf(ifile, "%lf", &y) == 1) {
-        if (++npts >= maxdat) { // todo: ugly, refactor this
-            double *s;
-
-            maxdat += 5000;    /* allow the input buffer to grow (the
-				   increment is arbitrary) */
-            if ((s = realloc(data, maxdat * sizeof(double))) == NULL) {
-                fprintf(stderr,
-                        "sampen: insufficient memory, truncating input at row %ld\n",
-                        npts);
-                break;
-            }
-            data = s;
-        }
-        data[npts - 1] = y;
-    }
-
-    fclose(ifile);
-
-    if (npts < 1) {
-        fprintf(stderr, "sampen: %s contains no data\n", filenm);
-        help();
-        exit(1);
-    }
-
-    *filelen = npts;
-    return (data);
-}
 
 /* This function subtracts the mean from data, then divides the data by their
    standard deviation. */

@@ -2,12 +2,15 @@
 <module type="CPP_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/data_io.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/aux.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/argparse.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/aux.c" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/sampen2.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/sampen.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/utils.c" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sampen2.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/data_io.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/sampen2.c" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/argparse.h" isTestSource="false" />
     </content>
