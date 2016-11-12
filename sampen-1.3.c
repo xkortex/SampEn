@@ -59,6 +59,8 @@ void normalize(double *data, int n);
 
 void help(void);
 
+static int vector_flag = 1; //todo: make a properly scoped flag
+
 int main(int argc, char *argv[]) {
     double *data = NULL;
     double r = .2;
@@ -454,16 +456,39 @@ void sampen(double *data, int maxepoch, double r_tol, int npts, int max_npts_j) 
 
     }                /* outer loop: for i */
 
+
+    FILE *outfile = stdout;
+
     N = (long) (npts * (npts - 1) / 2);
     p[0] = A[0] / N;
-    printf("SampEn(0,%g,%d) = %lf\n", r_tol, npts, -log(p[0]));
+    if (vector_flag) {
+        fprintf(stdout, "%lf,", -log(p[0]));
+    } else {
+        printf("SampEn(0,%g,%d) = %lf\n", r_tol, npts, -log(p[0]));
+    }
+
 
     for (m = 1; m < maxepoch; m++) {
         p[m] = A[m] / B[m - 1];
-        if (p[m] == 0)
-            printf("No matches! SampEn((%d,%g,%d) = Inf!\n", m, r_tol, npts);
-        else
-            printf("SampEn(%d,%g,%d) = %lf\n", m, r_tol, npts, -log(p[m]));
+        if (vector_flag) {
+            if (p[m] == 0) {
+                fprintf(outfile, "inf");
+            } else {
+                fprintf(outfile, "%lf", -log(p[m]));
+            }
+            if (m < maxepoch - 1) {
+                fprintf(outfile, ",");
+            } else {
+                putc('\0', outfile);
+            }
+        } else {
+            if (p[m] == 0) {
+                printf("No matches! SampEn((%d,%g,%d) = Inf!\n", m, r_tol, npts);
+            } else {
+                printf("SampEn(%d,%g,%d) = %lf\n", m, r_tol, npts, -log(p[m]));
+            }
+        }
+
     }
 
     free(A);
