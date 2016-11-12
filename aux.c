@@ -15,3 +15,12 @@ void die(const char *format, ...) {
     fflush(stderr);
     exit(EXIT_FAILURE);
 }
+
+void *emalloc(size_t numBytes){
+    /* Error checked malloc */
+    void *buffer = malloc(numBytes);
+    if(!buffer){
+        die( "Fatal error: malloc error. Out of memory. \n  x_X\n");
+    }
+    return buffer;
+}

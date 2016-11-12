@@ -4,7 +4,7 @@ CC=gcc
 CFLAGS=-c
 LDFLAGS=-pthread -pg -lm
 EXE=sampen
-SOURCES=sampen.c
+SOURCES=sampen.c aux.c argparse.c
 OBJ=$(SOURCES:.c=.o)
 
 all: $(SOURCES) $(EXE)
