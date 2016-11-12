@@ -22,6 +22,10 @@ clean:
 #sampen:		sampen.c
 #	$(CC) $(CFLAGS) -o sampen sampen.c -lm
 
+#Can't get this to work right for some reason
+#sampen13:	sampen-1.3.c
+#	$(CC) $(CFLAGS) -o sampen13.o sampen-1.3.c -lm -O3
+
 test.txt:
 	ann2rr -r nsrdb/16265 -a atr >test.txt
 

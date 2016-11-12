@@ -12,7 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d9a99a5-4a10-4749-9135-b1601a372458" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sampen-1.3.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gmon.out" afterPath="$PROJECT_DIR$/gmon.out" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sampen" afterPath="$PROJECT_DIR$/sampen" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Makefile" afterPath="$PROJECT_DIR$/Makefile" />
     </list>
     <ignored path="sampen.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,7 +59,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sampen-1.3.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sampen-1.3.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sampen-1.3.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
@@ -127,11 +129,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Makefile" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Makefile" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Makefile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+            <state relative-caret-position="408">
+              <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -164,13 +166,13 @@
         <option value="$PROJECT_DIR$/argparse.h" />
         <option value="$PROJECT_DIR$/sampen2.h" />
         <option value="$PROJECT_DIR$/aux.h" />
-        <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/aux.c" />
         <option value="$PROJECT_DIR$/data_io.h" />
         <option value="$PROJECT_DIR$/sampen.c" />
         <option value="$PROJECT_DIR$/utils.c" />
         <option value="$PROJECT_DIR$/data_io.c" />
         <option value="$PROJECT_DIR$/sampen-1.3.c" />
+        <option value="$PROJECT_DIR$/Makefile" />
       </list>
     </option>
   </component>
@@ -458,12 +460,12 @@
       <option name="presentableId" value="Default" />
       <updated>1478632203783</updated>
       <workItem from="1478632206537" duration="2820000" />
-      <workItem from="1478900229139" duration="19437000" />
+      <workItem from="1478900229139" duration="19975000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22257000" />
+    <option name="totallyTimeSpent" value="22795000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1922" height="1080" extended-state="6" />
@@ -700,14 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Makefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -722,6 +716,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
           <folding />
         </state>
       </provider>
