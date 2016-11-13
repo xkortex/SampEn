@@ -13,7 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9d9a99a5-4a10-4749-9135-b1601a372458" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sampen-1.3.c" afterPath="$PROJECT_DIR$/sampen-1.3.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/timetesting.ipynb" afterPath="$PROJECT_DIR$/timetesting.ipynb" />
     </list>
     <ignored path="sampen.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,10 +61,10 @@
         <entry file="file://$PROJECT_DIR$/sampen-1.3.c">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="183">
-              <caret line="474" column="74" selection-start-line="474" selection-start-column="74" selection-end-line="474" selection-end-column="74" />
+              <caret line="474" column="37" selection-start-line="474" selection-start-column="37" selection-end-line="474" selection-end-column="37" />
               <folding>
                 <element signature="e#1945#1963#0" expanded="true" />
-                <marker date="1478978271305" expanded="false" signature="7453:12624" ph="{...}" />
+                <marker date="1479052579100" expanded="false" signature="7453:12624" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -463,12 +462,12 @@
       <option name="presentableId" value="Default" />
       <updated>1478632203783</updated>
       <workItem from="1478632206537" duration="2820000" />
-      <workItem from="1478900229139" duration="22501000" />
+      <workItem from="1478900229139" duration="23102000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25321000" />
+    <option name="totallyTimeSpent" value="25922000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1919" y="312" width="1368" height="768" extended-state="6" />
@@ -728,10 +727,10 @@
     <entry file="file://$PROJECT_DIR$/sampen-1.3.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
-          <caret line="474" column="74" selection-start-line="474" selection-start-column="74" selection-end-line="474" selection-end-column="74" />
+          <caret line="474" column="37" selection-start-line="474" selection-start-column="37" selection-end-line="474" selection-end-column="37" />
           <folding>
             <element signature="e#1945#1963#0" expanded="true" />
-            <marker date="1478978271305" expanded="false" signature="7453:12624" ph="{...}" />
+            <marker date="1479052579100" expanded="false" signature="7453:12624" ph="{...}" />
           </folding>
         </state>
       </provider>

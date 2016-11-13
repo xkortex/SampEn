@@ -472,7 +472,7 @@ void sampen(double *data, int maxepoch, double r_tol, int npts, int max_npts_j) 
         p[m] = A[m] / B[m - 1];
         if (vector_flag) {
             if (p[m] == 0) {
-                fprintf(outfile, "NaN"); //inf messes things up for python
+                fprintf(outfile, "nan"); //inf messes things up for python
             } else {
                 fprintf(outfile, "%lf", -log(p[m]));
             }
